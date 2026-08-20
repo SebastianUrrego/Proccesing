@@ -10,8 +10,13 @@ El proyecto se estructura en las siguientes categorías visuales y técnicas:
 
 ### 📊 Arrays (Arreglos)
 *   **Array:** Uso básico de arreglos unidimensionales para almacenar y manipular datos lineales.
+    <img width="792" height="441" alt="image" src="https://github.com/user-attachments/assets/082fde4d-ee89-4652-84e2-c45d6d36af75" />
+
 *   **Array 2D:** Matrices bidimensionales aplicadas a la renderización de patrones y mallas de puntos.
+    <img width="793" height="443" alt="image" src="https://github.com/user-attachments/assets/599eb3f8-f9a5-4d81-b02a-7db198a0bd65" />
+
 *   **Array Objects:** Estructuras de datos complejas que contienen colecciones de objetos interactivos independientes.
+    <img width="801" height="443" alt="image" src="https://github.com/user-attachments/assets/60a014ce-02cc-48bd-aee2-664ab5ffed8f" />
 
 ### 🎥 Camera (Cámara y Espacio 3D)
 *   **Move Eye:** Manipulación de la posición y el punto de vista del observador en un entorno tridimensional.
