@@ -32,10 +32,13 @@ El proyecto se estructura en las siguientes categorías visuales y técnicas:
 ### 🎨 Color (Espacios de Color y Gradientes)
 *   **Brightness / Saturation / Hue:** Control y desglose de las propiedades físicas del color usando los modos RGB y HSB.
   <img width="957" height="528" alt="image" src="https://github.com/user-attachments/assets/c86b7327-4099-480c-8294-d3a49ed3fc60" />
+  
 *   **Color Variables:** Declaración, almacenamiento estático y dinámico de variables de color.
   <img width="479" height="267" alt="image" src="https://github.com/user-attachments/assets/e8efbcfc-d190-4a52-82d5-d815a76c79bc" />
+  
 *   **Linear & Radial Gradient:** Algoritmos matemáticos de interpolación para crear transiciones suaves de color en líneas y círculos.
-  <img width="953" height="526" alt="image" src="https://github.com/user-attachments/assets/094e7787-5693-4cde-b71c-3531892d18ad" />
+    img width="953" height="526" alt="image" src="https://github.com/user-attachments/assets/094e7787-5693-4cde-b71c-3531892d18ad" />
+    
 *   **Relativity:** Estudio e implementación de contrastes cromáticos y percepción visual relativa de Joseph Albers.
 
 ## 📝 Licencia
