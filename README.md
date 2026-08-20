@@ -20,8 +20,14 @@ El proyecto se estructura en las siguientes categorías visuales y técnicas:
 
 ### 🎥 Camera (Cámara y Espacio 3D)
 *   **Move Eye:** Manipulación de la posición y el punto de vista del observador en un entorno tridimensional.
+  <img width="401" height="291" alt="image" src="https://github.com/user-attachments/assets/dfb49b68-5e37-4204-a0e2-57d38612ef5d" />
+
 *   **Orthographic:** Renderizado con proyección ortogonal para eliminar la perspectiva y mantener proporciones reales.
+  <img width="562" height="334" alt="image" src="https://github.com/user-attachments/assets/bca4b951-8caf-44f8-84bc-73c63b9b1fbf" />
+
 *   **Perspective:** Configuración de cámaras con perspectiva cónica clásica para simular profundidad espacial profunda.
+  <img width="532" height="294" alt="image" src="https://github.com/user-attachments/assets/36594940-5e21-4a1b-ac0c-a3352aa91cb2" />
+
 
 ### 🎨 Color (Espacios de Color y Gradientes)
 *   **Brightness / Saturation / Hue:** Control y desglose de las propiedades físicas del color usando los modos RGB y HSB.
