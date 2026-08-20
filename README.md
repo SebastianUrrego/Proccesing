@@ -44,7 +44,7 @@ El proyecto se estructura en las siguientes categorías visuales y técnicas:
 *  **Linear:**
   <img width="936" height="536" alt="image" src="https://github.com/user-attachments/assets/e47fa513-a97d-4296-b24e-02243b9b9473" />
 
-    <img width="953" height="526" alt="image" src="https://github.com/user-attachments/assets/094e7787-5693-4cde-b71c-3531892d18ad" />
+  <img width="953" height="526" alt="image" src="https://github.com/user-attachments/assets/094e7787-5693-4cde-b71c-3531892d18ad" />
     
 *   **Relativity:** Estudio e implementación de contrastes cromáticos y percepción visual relativa de Joseph Albers.
 
