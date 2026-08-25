@@ -48,6 +48,18 @@ El proyecto se estructura en las siguientes categorías visuales y técnicas:
     
 *   **Relativity:** Estudio e implementación de contrastes cromáticos y percepción visual relativa de Joseph Albers.
 
+### Formas
+* Se cambió el segundo valor del arreglo angles de 10 a 30.
+* Se agregó un arreglo de colores para asignar un color diferente a cada sección del gráfico.
+* Se cambió el fondo de gris a blanco (background(100) → background(255)).
+* Se reemplazó el uso de tonos de gris por colores definidos en el arreglo colores.
+* Se reorganizó el código de la función arc() para mejorar la legibilidad.
+* Se agregaron comentarios explicativos para facilitar la comprensión del código.
+* Se realizaron pequeños cambios de formato y organización del código.
+* El resultado final es un gráfico circular más visual y colorido, en lugar de utilizar únicamente escala de grises.
+
+<img width="438" height="359" alt="image" src="https://github.com/user-attachments/assets/23a559a7-f332-4277-8bd8-ea3882b1ae78" />
+
 ## 📝 Licencia
 
 Este proyecto es de código abierto y está disponible bajo la Licencia MIT, realizado por **Zephyrodes**
