@@ -52,11 +52,13 @@ El proyecto se estructura en las siguientes categorías visuales y técnicas:
 
 *   **Linear & Radial Gradient:** Algoritmos matemáticos de interpolación para crear transiciones suaves de color en líneas y círculos.
 
-    **Linear:**
-
     <img width="936" height="536" alt="image" src="https://github.com/user-attachments/assets/e47fa513-a97d-4296-b24e-02243b9b9473" />
 
     <img width="953" height="526" alt="image" src="https://github.com/user-attachments/assets/094e7787-5693-4cde-b71c-3531892d18ad" />
+
+    <img width="640" height="360" alt="logical_operators_saturacion2026-08-2519-26-41-ezgif com-optimize" src="https://github.com/user-attachments/assets/b4f856d1-9b44-4069-be89-2bdee78e569a" />
+
+
 
 *   **Relativity:** Estudio e implementación de contrastes cromáticos y percepción visual relativa de Joseph Albers.
 
@@ -68,8 +70,6 @@ El proyecto se estructura en las siguientes categorías visuales y técnicas:
     - **Zona OR** → baja saturación, tonos casi en escala de grises.
     - **test `true`** → puntos saturados girando en un sentido.
     - **test `false`** → puntos blancos (sin saturación) girando en sentido contrario.
-
-<video src="https://github.com/user-attachments/assets/e2cf304b-a41a-4b64-9319-a32943a383e5" autoplay loop muted playsinline width="100%"></video>
 
 ### Formas
 
