@@ -56,11 +56,12 @@ El proyecto se estructura en las siguientes categorías visuales y técnicas:
 
     <img width="953" height="526" alt="image" src="https://github.com/user-attachments/assets/094e7787-5693-4cde-b71c-3531892d18ad" />
 
-    <img width="640" height="360" alt="logical_operators_saturacion2026-08-2519-26-41-ezgif com-optimize" src="https://github.com/user-attachments/assets/b4f856d1-9b44-4069-be89-2bdee78e569a" />
-
-
+    <img width="640" height="360" alt="radial_bloom2026-08-2520-12-19-ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/ffe76122-df58-449b-bfe7-cbb74f305513" />
 
 *   **Relativity:** Estudio e implementación de contrastes cromáticos y percepción visual relativa de Joseph Albers.
+
+    <img width="640" height="360" alt="ezgif com-video-to-gif-converter" src="https://github.com/user-attachments/assets/82a792c6-bc87-443b-bd92-e23ecef2d0e1" />
+
 
 ### 🔀 Control (Estructuras Condicionales y Operadores Lógicos)
 
@@ -70,6 +71,8 @@ El proyecto se estructura en las siguientes categorías visuales y técnicas:
     - **Zona OR** → baja saturación, tonos casi en escala de grises.
     - **test `true`** → puntos saturados girando en un sentido.
     - **test `false`** → puntos blancos (sin saturación) girando en sentido contrario.
+
+    <img width="640" height="360" alt="logical_operators_saturacion2026-08-2519-26-41-ezgif com-optimize" src="https://github.com/user-attachments/assets/b4f856d1-9b44-4069-be89-2bdee78e569a" />
 
 ### Formas
 
