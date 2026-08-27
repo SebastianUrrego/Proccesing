@@ -42,6 +42,8 @@ El proyecto se estructura en las siguientes categorías visuales y técnicas:
 
     <img width="958" height="539" alt="image" src="https://github.com/user-attachments/assets/4f0e68e6-5354-424c-94f7-ccfdc00f0d31" />
 
+    <img width="640" height="360" alt="ezgif com-optimize" src="https://github.com/user-attachments/assets/ac68beef-888d-429f-884a-faf286cb467b" />
+
     <img width="957" height="528" alt="image" src="https://github.com/user-attachments/assets/c86b7327-4099-480c-8294-d3a49ed3fc60" />
 
 *   **Color Variables:** Declaración, almacenamiento estático y dinámico de variables de color.
