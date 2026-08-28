@@ -17,4 +17,7 @@
 
 <img width="508" height="296" alt="image" src="https://github.com/user-attachments/assets/0419e2c2-ccbd-48da-8eaa-ca329fad889a" />
 
-### 
+### Primitives 3D
+Se le agrego dinamismo al codigo no es un cambio visual como tal,    rotateY(frameCount * 0.02);  rotateX(-0.4);
+<img width="867" height="605" alt="image" src="https://github.com/user-attachments/assets/1567c795-dd6d-4c9d-9431-100245c7bfc8" />
+
