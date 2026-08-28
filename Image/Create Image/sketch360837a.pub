@@ -1,0 +1,101 @@
+/**
+
+Imagen con cambio continuo de color y forma.
+
+
+Se crea una imagen mediante un buffer de píxeles ARGB.
+La transparencia de cada píxel depende de su posición
+dentro de la imagen.
+
+
+El tono cambia continuamente y la imagen se deforma
+mediante una onda que modifica la posición de sus píxeles.
+*/
+
+PImage img;
+
+float tono = 0;
+float tiempo = 0;
+
+void setup() {
+size(640, 360);
+
+img = createImage(230, 230, ARGB);
+
+// Permite trabajar con tono, saturación y brillo.
+colorMode(HSB, 255);
+}
+
+void draw() {
+background(0);
+
+img.loadPixels();
+
+for (int y = 0; y < img.height; y++) {
+for (int x = 0; x < img.width; x++) {
+
+  int indice = x + y * img.width;
+
+  // Degradado de transparencia vertical.
+  float transparencia = map(
+    y,
+    0,
+    img.height,
+    255,
+    0
+  );
+
+  // Onda que modifica la forma de la imagen.
+  float ondaX = sin(y * 0.08 + tiempo) * 35;
+  float ondaY = cos(x * 0.08 + tiempo) * 35;
+
+  // Distancia deformada desde el centro.
+  float centroX = img.width / 2.0;
+  float centroY = img.height / 2.0;
+
+  float distanciaX = x - centroX + ondaX;
+  float distanciaY = y - centroY + ondaY;
+
+  float distancia = sqrt(
+    distanciaX * distanciaX +
+    distanciaY * distanciaY
+  );
+
+  // Crea una forma circular deformada.
+  if (distancia > 95) {
+    transparencia = 0;
+  }
+
+  // Cambia el color de todos los píxeles.
+  img.pixels[indice] = color(
+    tono,
+    255,
+    255,
+    transparencia
+  );
+}
+
+}
+
+img.updatePixels();
+
+// Imagen fija.
+image(img, 90, 80);
+
+// Imagen que sigue al mouse.
+image(
+img,
+mouseX - img.width / 2,
+mouseY - img.height / 2
+);
+
+// Cambio continuo de color.
+tono += 1;
+
+if (tono > 255) {
+tono = 0;
+}
+
+// Cambio continuo de forma.
+tiempo += 0.04;
+}
