@@ -1,0 +1,98 @@
+/**
+ * Letras Vivas — Tabla de caracteres con estilo
+ * ------------------------------------------------
+ * Variación creativa del sketch original "Letters" de Processing.
+ *
+ * Qué cambia respecto al original:
+ *   1) La fuente "respira": el tamaño de cada caracter oscila
+ *      suavemente con el tiempo, en lugar de quedar fijo en 24px.
+ *   2) Efecto lupa: el cursor del mouse funciona como una lupa que
+ *      agranda y resalta los caracteres que tiene cerca.
+ *   3) Colores por categoría: vocales, consonantes, números y
+ *      símbolos se pintan de un color distinto, para ver de un
+ *      vistazo cómo se compone la tabla ASCII.
+ *   4) Clic para explorar: cada clic salta 90 posiciones dentro de
+ *      la tabla ASCII imprimible, como si pasaras de "página".
+ */
+
+PFont f;
+
+float tamanoBase = 24;     // tamaño de letra de referencia
+int inicioASCII   = 35;    // primer caracter ASCII que se dibuja
+
+// Rango de caracteres ASCII imprimibles que vamos a recorrer
+final int RANGO_INICIO = 33;
+final int RANGO_FIN    = 126;
+final int RANGO_TOTAL  = RANGO_FIN - RANGO_INICIO + 1;
+
+void setup() {
+  size(640, 360);
+  background(0);
+
+  // La fuente debe existir en la carpeta data/ del sketch
+  printArray(PFont.list());
+  f = createFont("SourceCodePro-Regular.ttf", 24);
+  textFont(f);
+  textAlign(CENTER, CENTER);
+}
+
+void draw() {
+  background(0);
+
+  // Margen superior e izquierdo
+  int margen = 10;
+  translate(margen * 4, margen * 4);
+
+  int separacion = 46;
+  int contador = inicioASCII;
+
+  // Posición del mouse en el mismo sistema de coordenadas que la grilla
+  float mx = mouseX - margen * 4;
+  float my = mouseY - margen * 4;
+
+  for (int y = 0; y < height - separacion; y += separacion) {
+    for (int x = 0; x < width - separacion; x += separacion) {
+
+      // El código ASCII se mantiene siempre dentro del rango imprimible
+      int codigo = RANGO_INICIO + ((contador - RANGO_INICIO) % RANGO_TOTAL);
+      char letra = char(codigo);
+
+      // 1) Color según el tipo de caracter
+      fill(colorSegunTipo(letra));
+
+      // 2) Tamaño: respiración suave + lupa cerca del mouse
+      float respiracion = sin(frameCount * 0.05 + x * 0.05) * 3;
+      float distancia = dist(mx, my, x, y);
+      float lupa = map(constrain(distancia, 0, 100), 0, 100, 20, 0);
+      textSize(tamanoBase + respiracion + lupa);
+
+      // 3) Pequeño flote vertical, como si las letras respiraran
+      float flote = sin(frameCount * 0.04 + x * 0.1) * 3;
+
+      text(letra, x, y + flote);
+
+      contador++;
+    }
+  }
+}
+
+// Asigna un color distinto según el tipo de caracter:
+// vocales, consonantes, números o símbolos/puntuación.
+color colorSegunTipo(char letra) {
+  String vocales = "AEIOUaeiou";
+
+  if (vocales.indexOf(letra) != -1) {
+    return color(255, 204, 0);     // vocales: dorado (como el original)
+  } else if (Character.isLetter(letra)) {
+    return color(255);             // consonantes: blanco
+  } else if (Character.isDigit(letra)) {
+    return color(0, 220, 255);     // números: cian
+  } else {
+    return color(255, 80, 180);    // símbolos y puntuación: rosa
+  }
+}
+
+// Cada clic del mouse "pasa de página" en la tabla ASCII
+void mousePressed() {
+  inicioASCII = RANGO_INICIO + ((inicioASCII - RANGO_INICIO + 90) % RANGO_TOTAL);
+}
