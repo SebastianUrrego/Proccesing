@@ -1,0 +1,99 @@
+/**
+ * Mandala de Imagen en Red
+ *
+ * Basado en el ejemplo "Loading Images" de Processing.
+ * En vez de apilar la imagen 5 veces en vertical, la distribuimos
+ * en un anillo giratorio con color cíclico (modo HSB) y una copia
+ * central que pulsa. Clic izquierdo = cambia el número de copias.
+ */
+
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+PImage img;
+int copies = 8;
+
+void setup() {
+  size(640, 360);
+  imageMode(CENTER);
+  colorMode(HSB, 360, 100, 100, 100);
+
+  // Imagen cargada desde la web (reemplaza al PNG original).
+  // Wikimedia devuelve 403 al User-Agent por defecto de Java,
+  // así que la bajamos "a mano" simulando un navegador.
+  img = loadImageFromWeb("https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Tung_Tung_Tung_Sahur.webm/500px--Tung_Tung_Tung_Sahur.webm.jpg");
+
+  if (img == null) {
+    println("No se pudo cargar la imagen; revisá tu conexión o la URL.");
+  }
+
+  // Sin noLoop(): queremos animación continua
+}
+
+// Descarga la imagen manualmente con un User-Agent "de navegador",
+// la guarda como archivo temporal y la carga con loadImage() normal
+// (loadImage() directo desde la URL falla con 403 en Wikimedia).
+PImage loadImageFromWeb(String urlStr) {
+  try {
+    URL url = new URL(urlStr);
+    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+    conn.setRequestProperty("User-Agent",
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 " +
+      "(KHTML, like Gecko) Chrome/124.0 Safari/537.36");
+    conn.setConnectTimeout(8000);
+    conn.setReadTimeout(8000);
+
+    byte[] data = loadBytes(conn.getInputStream());
+    if (data == null) return null;
+
+    String tempPath = sketchPath("temp_download.jpg");
+    saveBytes(tempPath, data);
+    return loadImage(tempPath);
+  } catch (Exception e) {
+    println("Error al descargar la imagen: " + e.getMessage());
+    return null;
+  }
+}
+
+void draw() {
+  background(0);
+  if (img == null) return; // por si la carga desde red aún no termina
+
+  float t = frameCount * 0.02;
+  float angleStep = TWO_PI / copies;
+
+  pushMatrix();
+  translate(width / 2, height / 2);
+
+  // Anillo de copias girando, con color y escala animados
+  for (int i = 0; i < copies; i++) {
+    pushMatrix();
+    float angle = angleStep * i + t;
+    float radius = 80 + 40 * sin(t * 2 + i);
+    float x = cos(angle) * radius;
+    float y = sin(angle) * radius;
+    float scaleAmt = map(sin(t + i), -1, 1, 0.15, 0.35);
+    float hue = (frameCount * 2 + i * (360.0 / copies)) % 360;
+
+    translate(x, y);
+    rotate(angle + t);
+    scale(scaleAmt);
+    tint(hue, 80, 100, 90);
+    image(img, 0, 0);
+    popMatrix();
+  }
+
+  // Copia central "respirando", sin tinte (colores originales)
+  pushMatrix();
+  float pulse = map(sin(t * 3), -1, 1, 0.3, 0.45);
+  scale(pulse);
+  noTint();
+  image(img, 0, 0);
+  popMatrix();
+
+  popMatrix();
+}
+
+void mousePressed() {
+  copies = (copies >= 16) ? 4 : copies + 2;
+}
